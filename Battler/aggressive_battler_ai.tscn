@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://crjmd77c3ph0p"]
+
+[ext_resource type="Script" path="res://Scripts/aggressive_battler_AI.gd" id="1_40fn2"]
+
+[node name="AggressiveBattlerAI" type="Node"]
+script = ExtResource("1_40fn2")

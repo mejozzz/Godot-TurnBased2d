@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://buxcu8lfwq7x6"]
+
+[ext_resource type="PackedScene" uid="uid://c08wrofft7unh" path="res://Battler/battler.tscn" id="1_78s63"]
+
+[node name="Beruang" instance=ExtResource("1_78s63")]

@@ -1,0 +1,41 @@
+[gd_scene load_steps=10 format=3 uid="uid://boulfcs1ss2ph"]
+
+[ext_resource type="Script" path="res://Scripts/active_turn_queue.gd" id="1_dkp4f"]
+[ext_resource type="Texture2D" uid="uid://dw0m37hdytw5m" path="res://Image/steppes.png" id="1_wam6a"]
+[ext_resource type="PackedScene" uid="uid://cwk7ndw6s4sgk" path="res://Battler/bugcat.tscn" id="2_dwatu"]
+[ext_resource type="PackedScene" uid="uid://oxl0vgq0bwd" path="res://Battler/bear.tscn" id="3_yflpa"]
+[ext_resource type="Resource" uid="uid://csgwbx6b8n4dg" path="res://Battler/Stats/enemy_stats.tres" id="4_28d5l"]
+[ext_resource type="Resource" uid="uid://c2nx2pq6c7jrq" path="res://Actions/basic_attack.tres" id="5_kb56l"]
+[ext_resource type="Resource" uid="uid://ctot5llsi5c0p" path="res://Battler/Stats/player_stats.tres" id="7_w46ur"]
+[ext_resource type="PackedScene" uid="uid://crjmd77c3ph0p" path="res://Battler/aggressive_battler_ai.tscn" id="8_mqedk"]
+[ext_resource type="Resource" uid="uid://c07rmwodc2w37" path="res://Actions/claw.tres" id="9_g2o5h"]
+
+[node name="CombatDemo" type="Node2D"]
+
+[node name="BackgroundLayer" type="CanvasLayer" parent="."]
+layer = -1
+
+[node name="Steppes" type="Sprite2D" parent="BackgroundLayer"]
+position = Vector2(966, 538)
+texture = ExtResource("1_wam6a")
+
+[node name="ActiveTurnQueue" type="Node2D" parent="."]
+script = ExtResource("1_dkp4f")
+
+[node name="Bear" parent="ActiveTurnQueue" instance=ExtResource("3_yflpa")]
+position = Vector2(1477, 685)
+stats = ExtResource("7_w46ur")
+actions = Array[Resource("res://Scripts/action_data.gd")]([ExtResource("5_kb56l")])
+is_party_member = true
+
+[node name="BattlerAnim" parent="ActiveTurnQueue/Bear" index="0"]
+scale = Vector2(-1, 1)
+
+[node name="BugCat" parent="ActiveTurnQueue" instance=ExtResource("2_dwatu")]
+position = Vector2(350, 666)
+stats = ExtResource("4_28d5l")
+ai_scene = ExtResource("8_mqedk")
+actions = Array[Resource("res://Scripts/action_data.gd")]([ExtResource("5_kb56l"), ExtResource("9_g2o5h")])
+
+[editable path="ActiveTurnQueue/Bear"]
+[editable path="ActiveTurnQueue/Bear/BattlerAnim"]

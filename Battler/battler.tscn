@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://c08wrofft7unh"]
+
+[ext_resource type="Script" path="res://Scripts/battler.gd" id="1_4a07d"]
+[ext_resource type="PackedScene" uid="uid://ullya5tr3q3y" path="res://Battler/battler_anim.tscn" id="2_mj5sa"]
+[ext_resource type="Script" path="res://Scripts/status_effect_container.gd" id="3_6xujp"]
+
+[node name="Battler" type="Node2D"]
+script = ExtResource("1_4a07d")
+
+[node name="BattlerAnim" parent="." instance=ExtResource("2_mj5sa")]
+
+[node name="StatusEffectContainer" type="Node" parent="."]
+script = ExtResource("3_6xujp")
+
+[connection signal="animation_finished" from="BattlerAnim" to="." method="_on_BattlerAnim_animation_finished"]

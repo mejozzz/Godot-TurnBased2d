@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="AttackActionData" load_steps=3 format=3 uid="uid://c2nx2pq6c7jrq"]
+
+[ext_resource type="Script" path="res://Scripts/attack_action_data.gd" id="1_4bidi"]
+[ext_resource type="Resource" uid="uid://c1prv50moet4n" path="res://Battler/StatusEffect/bug.tres" id="2_2ev1v"]
+
+[resource]
+script = ExtResource("1_4bidi")
+damage_multiplier = 0.8
+hit_chance = 100.0
+status_effect = ExtResource("2_2ev1v")
+label = "Basic Attack"
+energy_cost = 0
+element = 0
+is_targeting_self = false
+is_targeting_all = false
+readiness_saved = 20.0

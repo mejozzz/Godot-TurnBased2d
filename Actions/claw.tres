@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="AttackActionData" load_steps=2 format=3 uid="uid://c07rmwodc2w37"]
+
+[ext_resource type="Script" path="res://Scripts/attack_action_data.gd" id="1_57jb7"]
+
+[resource]
+script = ExtResource("1_57jb7")
+damage_multiplier = 0.8
+hit_chance = 100.0
+label = "Claw"
+energy_cost = 0
+element = 4
+is_targeting_self = false
+is_targeting_all = false
+readiness_saved = 20.0
