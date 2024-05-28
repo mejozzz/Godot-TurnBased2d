@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://b5updm05t4lhx"]
+
+[ext_resource type="Texture2D" uid="uid://dpjwj7ul6hnw" path="res://Image/UI/UIActionMenu/menu_action_bg.png" id="1_mcbjr"]
+[ext_resource type="Texture2D" uid="uid://dvgsbfwrnxrqk" path="res://Image/UI/UIActionMenu/menu_action_bg_pressed.png" id="2_xupvw"]
+[ext_resource type="Texture2D" uid="uid://dev5qa4412ccf" path="res://Image/UI/UIActionMenu/menu_action_bg_disabled.png" id="3_v8onj"]
+[ext_resource type="Texture2D" uid="uid://r0v87nwexqon" path="res://Image/UI/UIActionMenu/menu_action_bg_focused.png" id="4_q2nlv"]
+
+[node name="UIActionButton" type="TextureButton"]
+offset_right = 40.0
+offset_bottom = 40.0
+texture_normal = ExtResource("1_mcbjr")
+texture_pressed = ExtResource("2_xupvw")
+texture_disabled = ExtResource("3_v8onj")
+texture_focused = ExtResource("4_q2nlv")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+clip_contents = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Icon" type="TextureRect" parent="HBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="HBoxContainer"]
+layout_mode = 2
